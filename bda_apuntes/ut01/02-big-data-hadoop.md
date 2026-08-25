@@ -59,29 +59,29 @@ El ecosistema de Hadoop dispone de decenas de herramientas que cubren prácticam
 
 |    | Herramienta | Tipo / Propósito | Descripción funcional |
 | -- | :--- | :--- | :--- |
-| ![img](./imgs/hive.png) | **Apache Hive** | *Data Warehousing* / SQL | Permite realizar consultas y análisis sobre datos en HDFS utilizando el lenguaje declarativo **HiveQL** (similar a SQL). |
-| ![img](./imgs/pig.png) | **Apache Pig** | Procesamiento / Scripting | Plataforma de alto nivel para diseñar tareas complejas de MapReduce mediante el lenguaje de scripting procedural **Pig Latin**. |
-| ![img](./imgs/spark.png) | **Apache Spark** | Motor de Cómputo en Memoria | Motor de cómputo en memoria para análisis en tiempo real, procesos *batch* y *Machine Learning*, compatible con Scala, Java, Python y R. |
-| ![img](./imgs/hbase.png) | **Apache HBase** | Base de Datos NoSQL | Base de datos NoSQL distribuida, columnar y escalable que se ejecuta sobre HDFS. |
-| ![img](./imgs/kafka.png) | **Apache Kafka** | Ingesta / *Streaming* | Plataforma distribuida de mensajería y publicación/suscripción para la transmisión de flujos de eventos en tiempo real. |
-| ![img](./imgs/flume.png) | **Apache Flume** | Ingesta de Logs | Servicio orientado a la recolección, agregación y movimiento masivo de datos de *logs* hacia HDFS. |
-| ![img](./imgs/zookeeper.png) | **Apache ZooKeeper** | Coordinación de Clúster | Servicio centralizado para el mantenimiento de configuraciones, sincronización y alta disponibilidad en sistemas distribuidos. |
-| ![img](./imgs/sqoop.png) | **Apache Sqoop** | Transferencia de Datos | Herramienta de transferencia bidireccional eficiente entre Hadoop y bases de datos relacionales (MySQL, Oracle, etc.). |
-| ![img](./imgs/oozie.png) | **Apache Oozie** | Orquestación / *Workflow* | Sistema para programar y orquestar flujos de trabajo (*workflows*) complejos entre múltiples componentes de Hadoop. |
-| ![img](./imgs/mahout.png) | **Apache Mahout** | *Machine Learning* | Biblioteca escalable de algoritmos de aprendizaje automático para clasificación, recomendación y agrupamiento. |
-| ![img](./imgs/storm.png) | **Apache Storm** | *Streaming* en Tiempo Real | Sistema distribuido enfocado en el procesamiento de flujos continuos de datos en tiempo real. |
-| ![img](./imgs/nifi.png) | **Apache NiFi** | Automatización de Flujos | Plataforma con interfaz gráfica para diseñar, automatizar y controlar el flujo y transformación de datos entre sistemas. |
-| ![img](./imgs/tez.png) | **Apache Tez** | Motor de Ejecución de Tareas | *Framework* optimizado para la ejecución de grafos de procesamiento dirigidos, con mayor rendimiento que MapReduce. |
-| ![img](./imgs/drill.png) | **Apache Drill** | Motor SQL Interactivo | Motor de consultas SQL distribuidas sobre datos no estructurados o semiestructurados (JSON, Parquet, CSV) sin esquema previo. |
-| ![img](./imgs/atlas.png) | **Apache Atlas** | Gobernanza de Datos | Marco de gobernanza, catalogación y seguimiento del linaje de metadatos en entornos Hadoop. |
-| ![img](./imgs/zeppelin.png) | **Apache Zeppelin** | Cuadernos Interactivos | *Notebook* interactivo colaborativo para análisis exploratorio, visualización y desarrollo con Spark, Hive, Python, etc. |
-| ![img](./imgs/ranger.png) | **Apache Ranger** | Seguridad y Auditoría | *Framework* de seguridad para la administración centralizada de directivas de control de acceso y auditoría. |
-| ![img](./imgs/ambari.png) | **Apache Ambari** | Gestión y Monitorización | Herramienta visual orientada al aprovisionamiento, gestión, configuración y supervisión operativa del clúster. |
-| ![img](./imgs/kylin.png) | **Apache Kylin** | Motor OLAP | Motor analítico en línea (OLAP) de baja latencia diseñado para procesar consultas multidimensionales sobre Hadoop. |
-| ![img](./imgs/phoenix.png) | **Apache Phoenix** | Capa SQL sobre HBase | Motor relacional SQL de baja latencia que opera de forma nativa sobre tablas HBase. |
-| ![img](./imgs/flink.png) | **Apache Flink** | Procesamiento de *Streams* | Framework para el procesamiento de flujos continuos (*streaming*) en tiempo real y por lotes a gran escala. |
-| ![img](./imgs/knox.png) | **Apache Knox** | Pasarela de Seguridad | *Gateway* perimetral que centraliza y securiza el acceso web y API a los servicios del clúster. |
-| ![img](./imgs/superset.png) | **Apache Superset** | Visualización de Datos | Plataforma moderna de exploración y visualización de datos para la confección de cuadros de mando interactivos. |
+| ![Hive](./imgs/hive.png) | **Apache Hive** | *Data Warehousing* / SQL | Permite realizar consultas y análisis sobre datos en HDFS utilizando el lenguaje declarativo **HiveQL** (similar a SQL). |
+| ![Pig](./imgs/pig.png) | **Apache Pig** | Procesamiento / Scripting | Plataforma de alto nivel para diseñar tareas complejas de MapReduce mediante el lenguaje de scripting procedural **Pig Latin**. |
+| ![Spark](./imgs/spark.png) | **Apache Spark** | Motor de Cómputo en Memoria | Motor de cómputo en memoria para análisis en tiempo real, procesos *batch* y *Machine Learning*, compatible con Scala, Java, Python y R. |
+| ![HBase](./imgs/hbase.png) | **Apache HBase** | Base de Datos NoSQL | Base de datos NoSQL distribuida, columnar y escalable que se ejecuta sobre HDFS. |
+| ![Kafka](./imgs/kafka.png) | **Apache Kafka** | Ingesta / *Streaming* | Plataforma distribuida de mensajería y publicación/suscripción para la transmisión de flujos de eventos en tiempo real. |
+| ![Flume](./imgs/flume.png) | **Apache Flume** | Ingesta de Logs | Servicio orientado a la recolección, agregación y movimiento masivo de datos de *logs* hacia HDFS. |
+| ![Zookeeper](./imgs/zookeeper.png) | **Apache ZooKeeper** | Coordinación de Clúster | Servicio centralizado para el mantenimiento de configuraciones, sincronización y alta disponibilidad en sistemas distribuidos. |
+| ![Sqoop](./imgs/sqoop.png) | **Apache Sqoop** | Transferencia de Datos | Herramienta de transferencia bidireccional eficiente entre Hadoop y bases de datos relacionales (MySQL, Oracle, etc.). |
+| ![Oozie](./imgs/oozie.png) | **Apache Oozie** | Orquestación / *Workflow* | Sistema para programar y orquestar flujos de trabajo (*workflows*) complejos entre múltiples componentes de Hadoop. |
+| ![Mahout](./imgs/mahout.png) | **Apache Mahout** | *Machine Learning* | Biblioteca escalable de algoritmos de aprendizaje automático para clasificación, recomendación y agrupamiento. |
+| ![Storm](./imgs/storm.png) | **Apache Storm** | *Streaming* en Tiempo Real | Sistema distribuido enfocado en el procesamiento de flujos continuos de datos en tiempo real. |
+| ![NiFi](./imgs/nifi.png) | **Apache NiFi** | Automatización de Flujos | Plataforma con interfaz gráfica para diseñar, automatizar y controlar el flujo y transformación de datos entre sistemas. |
+| ![Tez](./imgs/tez.png) | **Apache Tez** | Motor de Ejecución de Tareas | *Framework* optimizado para la ejecución de grafos de procesamiento dirigidos, con mayor rendimiento que MapReduce. |
+| ![Drill](./imgs/drill.png) | **Apache Drill** | Motor SQL Interactivo | Motor de consultas SQL distribuidas sobre datos no estructurados o semiestructurados (JSON, Parquet, CSV) sin esquema previo. |
+| ![Atlas](./imgs/atlas.png) | **Apache Atlas** | Gobernanza de Datos | Marco de gobernanza, catalogación y seguimiento del linaje de metadatos en entornos Hadoop. |
+| ![Zeppelin](./imgs/zeppelin.png) | **Apache Zeppelin** | Cuadernos Interactivos | *Notebook* interactivo colaborativo para análisis exploratorio, visualización y desarrollo con Spark, Hive, Python, etc. |
+| ![Ranger](./imgs/ranger.png) | **Apache Ranger** | Seguridad y Auditoría | *Framework* de seguridad para la administración centralizada de directivas de control de acceso y auditoría. |
+| ![Ambari](./imgs/ambari.png) | **Apache Ambari** | Gestión y Monitorización | Herramienta visual orientada al aprovisionamiento, gestión, configuración y supervisión operativa del clúster. |
+| ![Kylin](./imgs/kylin.png) | **Apache Kylin** | Motor OLAP | Motor analítico en línea (OLAP) de baja latencia diseñado para procesar consultas multidimensionales sobre Hadoop. |
+| ![Phoenix](./imgs/phoenix.png) | **Apache Phoenix** | Capa SQL sobre HBase | Motor relacional SQL de baja latencia que opera de forma nativa sobre tablas HBase. |
+| ![Flink](./imgs/flink.png) | **Apache Flink** | Procesamiento de *Streams* | Framework para el procesamiento de flujos continuos (*streaming*) en tiempo real y por lotes a gran escala. |
+| ![Knox](./imgs/knox.png) | **Apache Knox** | Pasarela de Seguridad | *Gateway* perimetral que centraliza y securiza el acceso web y API a los servicios del clúster. |
+| ![Superset](./imgs/superset.png) | **Apache Superset** | Visualización de Datos | Plataforma moderna de exploración y visualización de datos para la confección de cuadros de mando interactivos. |
 
 
 
