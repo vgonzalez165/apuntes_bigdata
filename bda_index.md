@@ -2,35 +2,38 @@
 
 ## Contenidos
 
-| UT       | Título                                                         |           |
-| -------- | -------------------------------------------------------------- | --------- |
-| **UT01** | **Introducción al Big Data y paradigmas distribuidos**         | `RA2`     |
-| 1.1      | Historia y qué es Apache Hadoop                                |           |
-| 1.2      | Historia y qué es Amazon AWS                                   |           |
-| **UT02** | **Almacenamiento distribuido e integridad con HDFS**           | `RA3`     |
-| 2.1      | Arquitectura y conceptos de Hadoop                             |           |
-| 2.2      | Instalación de Hadoop y HDFS                                   |           |
-| 2.3      | Administración y puesta en marcha                              |           |
-| 2.4      | Comandos básicos y CLI de HDFS                                 |           |
-| 2.5      | Mecanismos de integridad, replicación y Checksums en HDFS.     |           |
-| **UT03** | **Ingesta de datos tradicional**                               | `RA1`     |
-| 3.1      | Ingesta de datos estructurados con Sqoop                       |           |
-| 3.2      | Ingesta de datos no estructurados en streaming con Flume       |           |
-| **UT04** | **Ingesta de datos en entornos Cloud**                         | `RA1`     |
-| 4.1      | Amazon S3                                                      |           |
-| 4.2      | Ingesta y procesamiento serverless con AWS Lambda              |           |
-| 4.3      | El catálogo de datos y ETL con AWS Glue                        |           |
-| 4.4      | Análisis SQL con Amazon Athena                                 |           |
-| **UT05** | **Procesamiento distribuido de datos con Apache Spark**        | `RA1`     |
-| 5.1      | Fundamentos de Apache Spark                                    |           |
-| 5.2      | RDDs (Resilient Distributed Datasets)                          |           |
-| 5.3      | Manipulación de datos con SparkSQL y DataFrames                |           |
-| 5.4      | Spark en IA y Machine Learning                                 |           |
-| **UT06** | **Monitorización, fiabilidad y rendimiento del sistema**       | `RA4`     |
-| 6.1      | CloudWatch                                                     |           |
-| 6.2      | Alertas                                                        |           |
-| 6.3      | Métricas                                                       |           |
-| **UT07** | **Analítica de datos y simulación de modelos de BI**           | `RA5`     |
+| UT       | Título                                                            |           | |
+| -------- | ----------------------------------------------------------------- | --------- | --- |
+| **UT01** | **Introducción al Big Data y paradigmas distribuidos**            | `RA2`     | [Contenidos](./bda_apuntes/ut01/ut01_index.md)
+| **UT02** | **Almacenamiento distribuido e integridad con HDFS**              | `RA3`     |
+| 2.1      | Arquitectura y conceptos de Hadoop                                |           |
+| 2.2      | Instalación de Hadoop y HDFS                                      |           |
+| 2.3      | Administración y puesta en marcha                                 |           |
+| 2.4      | Comandos básicos y CLI de HDFS                                    |           |
+| 2.5      | Mecanismos de integridad, replicación y Checksums en HDFS.        |           |
+| **UT03** | **Almacenamiento distribuido en Cloud con Amazon S3. Data Lakes** | `RA1`     |
+| 3.1      | Data Lake vs Data Warehouse                                       |           |
+| 3.2      | Almacenamiento de objetos con Amazon S3                           |           |
+| 3.3      | Formatos de almacenamiento eficientes: CSV, JSON, Avro, Parquet/ORC                  |           |
+| 3.4      | Estrategias de particionado, compresión y optimización del almacenamiento en la nube |           |
+| **UT04** | **Ingesta de datos tradicional**                                  | `RA1`     |
+| 3.1      | Ingesta de datos estructurados con Sqoop                          |           |
+| 3.2      | Ingesta de datos no estructurados en streaming con Flume          |           |
+| **UT05** | **Ingesta de datos en entornos Cloud**                            | `RA1`     |
+| 4.1      | Amazon S3                                                         |           |
+| 4.2      | Ingesta y procesamiento serverless con AWS Lambda                 |           |
+| 4.3      | El catálogo de datos y ETL con AWS Glue                           |           |
+| 4.4      | Análisis SQL con Amazon Athena                                    |           |
+| **UT06** | **Procesamiento distribuido de datos con Apache Spark**           | `RA1`     |
+| 5.1      | Fundamentos de Apache Spark                                       |           |
+| 5.2      | RDDs (Resilient Distributed Datasets)                             |           |
+| 5.3      | Manipulación de datos con SparkSQL y DataFrames                   |           |
+| 5.4      | Spark en IA y Machine Learning                                    |           |
+| **UT07** | **Monitorización, fiabilidad y rendimiento del sistema**          | `RA4`     |
+| 6.1      | CloudWatch                                                        |           |
+| 6.2      | Alertas                                                           |           |
+| 6.3      | Métricas                                                          |           |
+| **UT08** | **Analítica de datos y simulación de modelos de BI**              | `RA5`     |
 | 7.1      | Amazon Quicksight |
 
 
@@ -39,8 +42,8 @@
 
 
 | Práctica   | Enlace                                                                          | Fecha límite   | RAs asociados |
-| ---------- | ------------------------------------------------------------------------------- | -------------- |             |
-| **UT01**   | **Introducción al Big Data y paradigmas distribuidos**                                            |                |             |
+| ---------- | ------------------------------------------------------------------------------- | -------------- | --- |
+| **UT01**   | **Introducción al Big Data y paradigmas distribuidos**                          |                |             |
 |            |                                                                                 |                |             |
 | **UT02**   | **Almacenamiento distribuido: HDFS**                                            |                |             |
 | `PR0201`   | [Instalación de Hadoop en modo pseudo-distribuido](./bda/ut02/pr0201.md)        | **30/11/2025** | `RA1` `RA2` |
