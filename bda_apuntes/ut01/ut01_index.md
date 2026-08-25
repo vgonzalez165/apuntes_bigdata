@@ -5,11 +5,11 @@
 Módulo:                     BIG DATA APLICADO
 Profesor:                   Víctor J. González
 Unidad de Trabajo:          UT01
-Título:                     Introducción al Big Data y paradigmas distribuidos
+Título:                     Paradigmas distribuidos
 Resultados de aprendizaje:  RA2
 ```
 
-# UT01: Introducción a Big Data y Paradigmas Distribuidos
+# UT01: Paradigmas Distribuidos
 
 ## Resultados de aprendizaje asociados
 

@@ -22,6 +22,16 @@ Netflix aprovecha los datos generados por más de 230 millones de suscriptores p
 Captura datos como hábitos de consumo (tiempo de sesión, dispositivos, fechas y horarios), interacciones (pausas, rebobinados, abandonos a mitad de título, búsquedas) o datos contextuales (ubicación, idioma y perfiles de visualización).
 
 
+
+
+| **TÉCNICAS ALGORÍTMICAS Y EXPERIMENTACIÓN** |  |
+| **Filtrado colaborativo y Machine Learning** | Comparación del comportamiento del usuario con perfiles de gustos similares y análisis de metadatos de las obras (género, ritmo narrativo, reparto). |
+| **Personalización visual** | Generación y asignación de miniaturas dinámicas según los intereses del usuario (destacando a un actor concreto o acentuando el componente de acción o romance). |
+| **Pruebas A/B sistemáticas (*Split Testing*)** | Evaluación paralela de interfaces, posiciones de botones, textos y versiones de algoritmos para determinar empíricamente qué opción maximiza el tiempo de visualización. |
+| **Producción basada en datos (*Data-Driven Content*)** | La creación de la serie *House of Cards* (2013) supuso una inversión pionera de 100 millones de dólares decidida tras constatar en los datos la popularidad de la serie británica original, el alto seguimiento del director David Fincher, el interés por los dramas políticos y las búsquedas del actor Kevin Spacey; un modelo predictivo repetido en éxitos como *Stranger Things*, *Gambito de dama* o *A ciegas*. |
+
+
+
 #### Aplicación de las 5 V's en Netflix
 
 - **Volumen:** Cientos de petabytes procedentes de la actividad audiovisual de más de 230 millones de usuarios.
