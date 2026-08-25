@@ -4,7 +4,7 @@
 
 | UT       | Título                                                            |           | |
 | -------- | ----------------------------------------------------------------- | --------- | --- |
-| **UT01** | **Introducción al Big Data y paradigmas distribuidos**            | `RA2`     | [Contenidos](./bda_apuntes/ut01/ut01_index.md)
+| **UT01** | **Introducción al Big Data y paradigmas distribuidos**            | `RA2`     | [Contenidos](./bda_apuntes/ut01/ut01_index.md) |
 | **UT02** | **Almacenamiento distribuido e integridad con HDFS**              | `RA3`     |
 | 2.1      | Arquitectura y conceptos de Hadoop                                |           |
 | 2.2      | Instalación de Hadoop y HDFS                                      |           |
