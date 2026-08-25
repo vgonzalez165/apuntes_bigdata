@@ -63,16 +63,16 @@ Marco que define los límites de seguridad y cumplimiento legal entre el proveed
 Amazon AWS ha ido creciendo a lo largo de los años hasta tener decenas de servicios de todo tipo. En la siguiente tabla se muestran algunos de los más relevantes.
 
 
-| Servicio | Tipo / Propósito | Descripción funcional |
-| --- | --- | --- |
-| **Amazon S3** *(Simple Storage Service)* | Almacenamiento de Objetos / *Data Lake* | Almacenamiento virtualmente infinito y de bajo coste con durabilidad del 99,999999999% (11 nueves). Admite datos estructurados y no estructurados, sirviendo de base para los *Data Lakes* al desvincular el almacenamiento del cómputo. |
-| **Amazon EC2** *(Elastic Cloud Compute)* | Computación / Máquinas Virtuales | Alquiler de instancias virtuales bajo demanda en minutos. Dispone de gran variedad de configuraciones (CPU, RAM, GPU) y escalado automático (*Auto Scaling*) para absorber cargas de trabajo masivas. |
-| **Amazon EMR** *(Elastic MapReduce)* | Procesamiento Distribuido Gestionado | Automatiza el despliegue de clústeres de Hadoop y Spark sobre instancias EC2 utilizando Amazon S3 como capa de almacenamiento. Permite crear clústeres efímeros y destruirlos tras la ejecución a muy bajo coste. |
-| **Amazon DynamoDB** | Base de Datos NoSQL (Clave-Valor) | Base de datos NoSQL gestionada con latencia de milisegundos a cualquier escala. Distribuye los datos en particiones físicas mediante una clave de partición y escala horizontalmente sin administrar servidores. |
-| **Amazon Redshift** | *Data Warehouse* / Base de Datos Columnar | Base de datos relacional columnar optimizada para operaciones analíticas complejas (OLAP) y consultas SQL sobre miles de millones de filas mediante procesamiento paralelo en clúster. |
-| **AWS Lambda** | Computación *Serverless* / FaaS *(Function as a Service)* | Ejecuta código ante eventos sin necesidad de aprovisionar ni administrar servidores, facturando por los milisegundos de cómputo utilizados. En Big Data se aplica a flujos ligeros en tiempo real, validación y limpieza en pipelines. |
-| **Amazon Athena** | Motor de Consultas SQL *Serverless* | Motor interactivo para realizar consultas SQL estándar directamente sobre datos almacenados en S3 (en formatos como CSV, JSON, Parquet u ORC) sin aprovisionar clústeres. |
-| **AWS Glue** | Integración de Datos / ETL *Serverless* | Servicio administrado para la preparación, transformación y movimiento de datos (ETL). Integra el *Glue Data Catalog* (metadatos), *Glue Crawlers* (inferencia automática de esquemas) y *ETL Jobs* (procesamiento masivo basado en Apache Spark).|
+|     | Servicio | Tipo / Propósito | Descripción funcional |
+| --- | --- | --- | --- |
+| ![img](./imgs/s3.png) | **Amazon S3** *(Simple Storage Service)* | Almacenamiento de Objetos / *Data Lake* | Almacenamiento virtualmente infinito y de bajo coste con durabilidad del 99,999999999% (11 nueves). Admite datos estructurados y no estructurados, sirviendo de base para los *Data Lakes* al desvincular el almacenamiento del cómputo. |
+| ![img](./imgs/ec2.png) | **Amazon EC2** *(Elastic Cloud Compute)* | Computación / Máquinas Virtuales | Alquiler de instancias virtuales bajo demanda en minutos. Dispone de gran variedad de configuraciones (CPU, RAM, GPU) y escalado automático (*Auto Scaling*) para absorber cargas de trabajo masivas. |
+| ![img](./imgs/emr.png) | **Amazon EMR** *(Elastic MapReduce)* | Procesamiento Distribuido Gestionado | Automatiza el despliegue de clústeres de Hadoop y Spark sobre instancias EC2 utilizando Amazon S3 como capa de almacenamiento. Permite crear clústeres efímeros y destruirlos tras la ejecución a muy bajo coste. |
+| ![img](./imgs/dynamo.png) | **Amazon DynamoDB** | Base de Datos NoSQL (Clave-Valor) | Base de datos NoSQL gestionada con latencia de milisegundos a cualquier escala. Distribuye los datos en particiones físicas mediante una clave de partición y escala horizontalmente sin administrar servidores. |
+| ![img](./imgs/redshift.png) | **Amazon Redshift** | *Data Warehouse* / Base de Datos Columnar | Base de datos relacional columnar optimizada para operaciones analíticas complejas (OLAP) y consultas SQL sobre miles de millones de filas mediante procesamiento paralelo en clúster. |
+| ![img](./imgs/lambda.png) | **AWS Lambda** | Computación *Serverless* / FaaS *(Function as a Service)* | Ejecuta código ante eventos sin necesidad de aprovisionar ni administrar servidores, facturando por los milisegundos de cómputo utilizados. En Big Data se aplica a flujos ligeros en tiempo real, validación y limpieza en pipelines. |
+| ![img](./imgs/athena.png) | **Amazon Athena** | Motor de Consultas SQL *Serverless* | Motor interactivo para realizar consultas SQL estándar directamente sobre datos almacenados en S3 (en formatos como CSV, JSON, Parquet u ORC) sin aprovisionar clústeres. |
+| ![img](./imgs/glue.png) | **AWS Glue** | Integración de Datos / ETL *Serverless* | Servicio administrado para la preparación, transformación y movimiento de datos (ETL). Integra el *Glue Data Catalog* (metadatos), *Glue Crawlers* (inferencia automática de esquemas) y *ETL Jobs* (procesamiento masivo basado en Apache Spark).|
 
 
 

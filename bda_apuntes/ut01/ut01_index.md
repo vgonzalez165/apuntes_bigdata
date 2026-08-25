@@ -25,28 +25,3 @@ facilitando el procesamiento de grandes cantidades de datos sin fallos y de form
 | **03**   | **Amazon Web Services (AWS)** | Paradigma Cloud, infraestructura global (Regiones, AZs, Puntos de presencia), modelo de responsabilidad compartida y servicios gestionados para Big Data (S3, EC2, EMR, DynamoDB, Redshift, Lambda, Athena y Glue). | [Ver contenidos →](./03-amazon-web-services.md) |
 | **04**   | **Preparación del Entorno** | Guía de configuración para las prácticas: entorno Cloud mediante AWS Academy (Learners Lab) y despliegue del entorno local con Docker y contenedores. | [Ver contenidos →](./04-preparacion-entorno.md) |
 
-
-## Desglose por Módulos
-
-#### [01. Contexto y motivación](./01-contexto-motivacion.md)
-
-- **Contexto y Motivación:** Crecimiento del dato y modelo de las 3V.
-- **Sistemas Tradicionales vs. Distribuidos:** Cuellos de botella y ventajas del escalado horizontal.
-
-#### [02. Big Data y Apache Hadoop](./02-big-data-hadoop.md)
-
-- **Arquitectura de Hadoop:** Núcleo del sistema (HDFS y YARN) y características base.
-- **Historia y Ecosistema:** Orígenes en Google/Nutch y tabla de herramientas analíticas.
-- **Problemas que Resuelve:** Comparativa de soluciones frente a sistemas relacionales.
-
-#### [03. Amazon Web Services (AWS)](./03-amazon-web-services.md)
-
-- **El Modelo Cloud:** Pago por uso, elasticidad y agilidad.
-- **Infraestructura Global:** Organización física y tolerancia a fallos por AZ.
-- **Responsabilidad Compartida:** Seguridad *en* la nube vs. seguridad *de* la nube.
-- **Servicios de Big Data:** Tabla comparativa de tecnologías (S3, EC2, EMR, DynamoDB, Redshift, Lambda, Athena y Glue).
-
-#### [04. Preparación del Entorno](./04-preparacion-entorno.md)
-
-- **AWS Academy:** Gestión del Learners Lab, límites de tiempo de sesión y credenciales CLI.
-- **Entorno Local:** Configuración de GitHub, creación de la red de Docker (`shared_network`) y despliegue de ficheros `docker-compose`.
