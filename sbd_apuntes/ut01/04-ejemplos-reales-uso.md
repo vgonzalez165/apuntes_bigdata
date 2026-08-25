@@ -13,21 +13,14 @@ Resultados de aprendizaje:  ?
 # UT01. INTRODUCCIÓN AL BIG DATA
 
 
-
-
 ## 4. Ejemplos reales de uso de Big Data
 
 ### 4.1. Netflix: Personalización extrema y producción de contenidos
 
-Netflix aprovecha los datos generados por más de 230 millones de suscriptores para maximizar la retención de clientes y optimizar sus inversiones en catálogo.
+Netflix aprovecha los datos generados por más de 230 millones de suscriptores para maximizar la retención de clientes y optimizar sus inversiones en catálogo. 
 
-```
-  DATOS CAPTURADOS:
-  • Hábitos de consumo: tiempo de sesión, dispositivos, fechas y horarios.
-  • Interacciones precisas: pausas, rebobinados, abandonos a mitad de título y búsquedas.
-  • Datos contextuales: ubicación, idioma y perfiles de visualización.
+Captura datos como hábitos de consumo (tiempo de sesión, dispositivos, fechas y horarios), interacciones (pausas, rebobinados, abandonos a mitad de título, búsquedas) o datos contextuales (ubicación, idioma y perfiles de visualización).
 
-```
 
 #### Aplicación de las 5 V's en Netflix
 

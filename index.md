@@ -3,7 +3,7 @@
 ## Prácticas y recursos
 
 - [**Big Data Aplicado**](./bda_index.md)
-- [**Sistemas de Big Data**](./index_sbd.md)
+- [**Sistemas de Big Data**](./sbd_index.md)
 - [**Otros (Python y Docker)**](./practicas/otros.md)
 
 
