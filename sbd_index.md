@@ -3,6 +3,7 @@
 | UT       | Título                                                            |           | |
 | -------- | ----------------------------------------------------------------- | --------- | --- |
 | **UT01** | **Introducción al Big Data**                                      | `??`     | [Contenidos](./sbd_apuntes/ut01/ut01_index.md) |
+| **UT02** | **Almacenamiento de datos**                                       | `RA3`     | [Contenidos](./sbd_apuntes/ut02/ut02_index.md) |
 
 
 ## Prácticas
