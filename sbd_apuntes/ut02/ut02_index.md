@@ -20,8 +20,8 @@ Resultados de aprendizaje:  RA3
 
 | Apartado | Título | Descripción | Enlace |
 | -------- | ------ | --- | --- |
-| **01**   | **Introducción al almacenamiento en Big Data**> | . | [Ver contenidos →](./01.md) |
-| **02**   | **Bases de datos clave-valor: Redis**> | . | [Ver contenidos →](./02.md) |
+| **01**   | **Introducción al almacenamiento en Big Data**> | . | [Ver contenidos →](./01-introduccion.md) |
+| **02**   | **Bases de datos clave-valor: Redis**> | . | [Ver contenidos →](./02-redis.md) |
 | **03**   | **Bases de datos de series de tiempo: InfluxDB**> | . | [Ver contenidos →](./03.md) |
 | **04**   | **Bases de datos columnares: Cassandra**> | . | [Ver contenidos →](./04.md) |
 | **05**   | **Bases de datos de grafos: Neo4j**> | . | [Ver contenidos →](./05.md) |
