@@ -12,4 +12,4 @@
 
 | Reto    | Título                                                             | RAs     |   |
 | ------- | ------------------------------------------------------------------ | ------- | - |
-| 1       | **Sistema de triaje y trazabilidad de urgencias hospitalarias**    | Pte     | [Enunciado](./retos/sprint1/enunciado_alumno/index.md) |
+| 1       | **Sistema de triaje y trazabilidad de urgencias hospitalarias**    | Pte     | [Enunciado](./sbd_retos/sprint1/enunciado_alumno/index.md) |
