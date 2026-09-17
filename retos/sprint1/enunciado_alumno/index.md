@@ -1,4 +1,4 @@
-# Reto Técnico 1: Sistema de triage y trazabilidad de urgencias hospitalarias
+# Reto 1: Sistema de triaje y trazabilidad de urgencias hospitalarias
 
 ## 1. Contexto
 
@@ -10,14 +10,14 @@ El Servicio de Urgencias de la red hospitalaria sufre episodios recurrentes de c
 Vuestro equipo de ingeniería de datos debe diseñar, desplegar y validar un prototipo funcional que resuelva la ingesta políglota de fuentes diversas (JSON y CSV), almacene el histórico clínico y gestione la cola de espera en tiempo real.
 
 
-# 2. Requisitos técnicos y arquitectura del sistema
+## 2. Requisitos técnicos y arquitectura del sistema
 
 El sistema debe operar íntegramente de forma reproducible mediante Docker y componerse de los siguientes módulos:
 
 ![Arquitectura del sistema](./arquitectura.png)
 
 
-## Infraestructura (`docker-compose.yml`)
+### Infraestructura (`docker-compose.yml`)
 
 El sistema estará compuesto por un entorno multi-contenedor con los siguientes servicios:
 
@@ -26,7 +26,7 @@ El sistema estará compuesto por un entorno multi-contenedor con los siguientes 
 - Un contenedor opcional para la ejecución de scripts Python con dependencias (`pandas`, `pymongo`, `redis`).
 
 
-## Módulo ETL (`etl_pipeline.py`):
+### Módulo ETL (`etl_pipeline.py`):
 
 El módulo ETL (Extract-Transform-Load) deberá estar implementado en Python y realizar las siguientes acciones:
 
@@ -36,9 +36,48 @@ El módulo ETL (Extract-Transform-Load) deberá estar implementado en Python y r
 
 Los datos se facilitarán mediante dos ficheros: uno está generado por la aplicación de **admisión** en urgencias y el otro contiene los datos obtenidos al realizar el **triaje** del paciente.
 
-### Datos de admisión (CSV)
 
-Este fichero está en formato CSV. A continuación se puede ver un ejemplo de su contenido:
+
+### Almacenamiento de datos
+
+**Almacenamiento en base de datos documental (MongoDB)**
+
+Aprovecharemos la capacidad de las bases de datos documentales para almacenar **datos semi-estructurados** para almacenar toda la información relativa a cada paciente.
+
+El elemento principal será la colección `episodios_urgencias` donde cada documento debe representar el paso completo de un paciente por el servicio, soportando atributos variables (un paciente traumatológico tiene campos de radiología que no existen en un paciente pediátrico).
+
+Las consultas que ser realizan habitualmente y que debes implementar en un script Python son:
+
+  1. Tiempo medio de estancia en urgencias agrupado por patología de triaje.
+  2. Porcentaje de derivaciones a planta (ingreso hospitalario) vs. alta domiciliaria por grupo de edad.
+
+
+**Almacenamiento en base de datos en memoria (Redis)**
+
+De forma paralela al almacenamiento de los datos en MongoDB necesitaremos los datos necesarios para atender rápidamente a los pacientes en función de su gravedad y hacer un seguimiento de la asignación de boxes. Para esto utilizaremos la base de datos **Redis**.
+
+Almacenaremos dos tipos de datos:
+
+-  **Cola de triaje:** el tipo *Sorted Set* de Redis es ideal para almacenar datos ordenados por un campo (`score`). El `score` numérico debe calcularse algorítmicamente ponderando el nivel de gravedad Manchester (1 a 5, donde 1 es máxima prioridad) y los minutos transcurridos desde la admisión.
+- **Gestión de Boxes:** uso de *Hashes* (`box:1`, `box:2`, etc.) para controlar en tiempo real qué paciente ocupa cada box, médico asignado y hora de entrada.
+
+Para gestionar estos datos debes implementar las siguientes funciones operativas mínimas:
+- `admitir_paciente(id_paciente, nivel_manchester)`: Encola al paciente con su prioridad calculada.
+- `llamar_siguiente_paciente(id_box)`: Extrae de forma atómica al paciente más prioritario y le asigna el box correspondiente.
+- `liberar_box(id_box)`: Vía de salida que actualiza el historial en MongoDB y deja el box disponible.
+
+
+
+
+
+## 3. Fuentes de datos facilitadas
+
+En el repositorio base del reto encontraréis dos ficheros con datos sintéticos sucios:
+
+1. `admisiones_historico.csv`: contiene 50.000 registros con campos: `id_episodio`, `sip_paciente`, `timestamp_llegada`, `motivo_consulta`, `frecuencia_cardiaca`, `tension_arterial`, `destino_alta`.
+2. `partes_clinicos.json`: contiene 15.000 documentos semiestructurados con datos de constantes complementarias, antecedentes personales, alergias y notas médicas en texto libre.
+
+A continuación se muestra un extracto de la información disponible en el fichero `admisiones_historico.csv`:
 
 ```csv
 id_episodio,sip_paciente,timestamp_llegada,motivo_consulta,frecuencia_cardiaca,tension_arterial,destino_alta
@@ -52,7 +91,6 @@ EP-2026-0006,SIP-772183,2026/10/04 08:52:10,Dolor abdominal difuso,999,135-85,Do
 EP-2026-0007,SIP-002914,04-10-2026 09:03:15,Reacción alérgica cutánea,88,115/75,null
 EP-2026-0008,SIP-663201,NULL,Lipotimia con recuperación,0,85/50,alta
 ```
-
 Como puedes observar, tiene una serie de problemas que deberás detectar y sanear, como pueden ser:
 
 - Fechas heterogénes
@@ -61,10 +99,7 @@ Como puedes observar, tiene una serie de problemas que deberás detectar y sanea
 - Formatos de tensión arterial inconsistente
 - Categorías sucias (columna `destino_alta`)
 
-
-### Datos de triaje (JSON)
-
-Estos datos contienen la información del paciente que ha sido obtenida durante el proceso de triaje. A continuación puedes ver una muestra:
+En cuanto al fichero `partes_clinicos.json`, tiene una estructura similar a la siguiente:
 
 ```json
 [
@@ -166,47 +201,11 @@ Algunas cosas que puedes observar de estos datos:
 - Hay campos ausentes o heterogéneos. Por ejemplo, en `constantes` hay pacientes que carecen de `saturacion_o2` o `glucemia_mg_dl`.
 
 
+## 4. Hitos de entrega y criterios de aceptación
 
+| Hito  | Semana | Fecha límite | Entrega |
+| ----- | ------ | ------------ | ------- |
+| **1** | 2      | xx/xx/2026   | Archivo `compose.yml` validado que levanta los servicios sin errores.<br> Script de Pandas que procesa los dos archivos crudos, genera un informe con los registros descartados/corregidos y exporta los datos limpios |
+| **2** | 4      | xx/xx/2026   | Colección de MongoDB poblada mediante script automatizado con índices adecuados.<br> Implementación de los scripts de Redis para encolar y desencolar pacientes según la prioridad algorítmica. |
+| **3** | 6      | xx/xx/2026   | Repositorio Git estructurado (`/docker`, `/src`, `/docs`).<br> `README.md` con instrucciones exactas para ejecutar el pipeline de extremo a extremo con un único comando.<br> Demostración en vivo de 10 minutos ante el aula simulando una llegada masiva de 20 pacientes con diferentes niveles de triaje y visualizando el vaciado correcto de la cola hacia los boxes. |
 
-
-
-
-- Colección `episodios_urgencias`: cada documento debe representar el paso completo de un paciente por el servicio, soportando atributos variables (un paciente traumatológico tiene campos de radiología que no existen en un paciente pediátrico).
-- Implementar un script con **dos consultas analíticas de agregación**:
-  1. Tiempo medio de estancia en urgencias agrupado por patología de triaje.
-  2. Porcentaje de derivaciones a planta (ingreso hospitalario) vs. alta domiciliaria por grupo de edad.
-
-
-
-
-* **Motor de Triage y Camas en Redis (`triage_engine.py`):**
-* **Cola de Triage:** Uso de un *Sorted Set* (`urgencias:cola_espera`). El `score` numérico debe calcularse algorítmicamente ponderando el nivel de gravedad Manchester (1 a 5, donde 1 es máxima prioridad) y los minutos transcurridos desde la admisión.
-* **Gestión de Boxes:** Uso de *Hashes* (`box:1`, `box:2`, etc.) para controlar en tiempo real qué paciente ocupa cada box, médico asignado y hora de entrada.
-* Implementar funciones operativas mínimas:
-* `admitir_paciente(id_paciente, nivel_manchester)`: Encola al paciente con su prioridad calculada.
-* `llamar_siguiente_paciente(id_box)`: Extrae de forma atómica al paciente más prioritario y le asigna el box correspondiente.
-* `liberar_box(id_box)`: Vía de salida que actualiza el historial en MongoDB y deja el box disponible.
-
-
-
-
-
----
-
-**3. Fuentes de Datos Facilitadas**
-
-En el repositorio base del reto encontraréis dos ficheros con datos sintéticos sucios:
-
-1. `admisiones_historico.csv`: Contiene 50.000 registros con campos: `id_episodio`, `sip_paciente`, `timestamp_llegada`, `motivo_consulta`, `frecuencia_cardiaca`, `tension_arterial`, `destino_alta`.
-2. `partes_clinicos.json`: Contiene 15.000 documentos semiestructurados con datos de constantes complementarias, antecedentes personales, alergias y notas médicas en texto libre.
-
----
-
-**4. Hitos de Entrega y Criterios de Aceptación (*Definition of Done*)**
-
-* **Hito 1 (Fin de Semana 2):** Archivo `docker-compose.yml` validado que levanta los servicios sin errores. Script de Pandas que procesa los dos archivos crudos, genera un informe con los registros descartados/corregidos y exporta los datos limpios.
-* **Hito 2 (Fin de Semana 4):** Colección en MongoDB poblada mediante script automatizado con índices adecuados. Implementación de los scripts de Redis para encolar y desencolar pacientes según la prioridad algorítmica.
-* **Hito 3 - Entrega Final (Fin de Semana 6):**
-* Repositorio Git estructurado (`/docker`, `/src`, `/docs`).
-* `README.md` exhaustivo con instrucciones exactas para ejecutar el pipeline de extremo a extremo con un único comando.
-* Demostración en vivo de 10 minutos ante el aula simulando una llegada masiva de 20 pacientes con diferentes niveles de triaje y visualizando el vaciado correcto de la cola hacia los boxes.
